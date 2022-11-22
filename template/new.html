@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>druva</title>
+    </head>
+    <body>
+        <h1 align=""center>
+         WELCOME TO AUTO ATTENDENCE
+        </h1>
+        <form action="/nn" method='post'>
+           Select file path: <input type="text" name="file" id="file"><br>
+           Enter day <font size="2">"ex : if day-1 then enter 1":</font><input type="number" name="day" id="day"><br>
+           Enter N Absenties :<input type="text" name="nlist" id="nlist"><br>
+           Enter L Absenties :<input type="text" name="llist" id="llist"><br>
+           <input type="submit">
+        </form>
+        {% if sheet!= undefined %}
+            <table id="demo" width="90%" align="center">
+                {% for row in range(1, sheet.max_row + 1) %}
+                <tr align="center">
+                {% for col in range(1, sheet.max_column + 1): %}
+                {% if sheet.cell(row, col).value == None %}
+                    <td> </td>
+                {% else %}
+                    <td>{{sheet.cell(row, col).value}}</td>
+                {% endif %}
+                </td>
+                {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+
+    </body>
+</html>
