@@ -5,9 +5,7 @@ import asyncio
 loop = asyncio.new_event_loop()
 asyncio.set_event_loop(loop)
 
-def driver(file):
-    st.title("Attendance")
-
+def driver(path):
     df = pd.read_excel(path)
     wb = load_workbook(path)
 
@@ -35,6 +33,7 @@ def driver(file):
     wb.save(filename="sample.xlsx")
 
 def main():
+    st.title("Attendance")
     path = str(st.text_input("Enter path of Excel file : "))
     path = path.replace('"','')
     if path:
