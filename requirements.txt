@@ -1,0 +1,3 @@
+openpyxl==3.0.10
+streamlit==1.14.0
+pandas @ file:///C:/b/abs_cdcgk91igc/croots/recipe/pandas_1663772960432/work

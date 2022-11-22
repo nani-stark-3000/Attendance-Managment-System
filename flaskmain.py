@@ -11,7 +11,6 @@ def index_home():
         wb = load_workbook(link)
         sheet = wb.active
         day = request.form['day']
-        print(day)
         index = chr(int(day)+67)
         head = index+'1'
         sheet[head]='Day-'+str(day)
