@@ -2,7 +2,7 @@ from flask import Flask,render_template,request,make_response
 from openpyxl import load_workbook
 app = Flask(__name__,template_folder='template')
 
-@app.route('/nn', methods=['POST','GET'])
+@app.route('/', methods=['POST','GET'])
 
 def index_home():
     if request.method=='POST':
@@ -33,4 +33,4 @@ def index_home():
     
 
 if __name__ == "__main__":
-    app.run(debug=True,port=47)
+    app.run(debug=True,port=34)
